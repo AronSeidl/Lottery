@@ -6,7 +6,7 @@
 package com.seidl.lottery.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,23 +21,31 @@ import javax.validation.constraints.NotEmpty;
 @Entity
 public class LotteryTicket implements Serializable {
 
+    private static final int PRICE = 1000;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private static final int PRICE = 1000;
     @NotEmpty
     private String name;
-    @NotEmpty
-    private final List<Integer> playedNumbers = new ArrayList<>();
 
-    public LotteryTicket(String name, int firstNumber, int secondNumber, int thirdNumber, int fourthNumber, int fifthNumber) {
+    private int first;
+    private int second;
+    private int third;
+    private int fourth;
+    private int fifth;
+
+    public LotteryTicket() {
+    }
+
+    public LotteryTicket(String name, int first, int second, int third, int fourth, int fifth) {
         this.name = name;
-        playedNumbers.add(firstNumber);
-        playedNumbers.add(secondNumber);
-        playedNumbers.add(thirdNumber);
-        playedNumbers.add(fourthNumber);
-        playedNumbers.add(fifthNumber);
+        this.first = first;
+        this.second = second;
+        this.third = third;
+        this.fourth = fourth;
+        this.fifth = fifth;
     }
 
     public Long getId() {
@@ -52,16 +60,56 @@ public class LotteryTicket implements Serializable {
         return name;
     }
 
-    public List<Integer> getPlayedNumbers() {
-        return playedNumbers;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public static int getPRICE() {
+    public static int getPrice() {
         return PRICE;
+    }
+
+    public int getFirst() {
+        return first;
+    }
+
+    public void setFirst(int first) {
+        this.first = first;
+    }
+
+    public int getSecond() {
+        return second;
+    }
+
+    public void setSecond(int second) {
+        this.second = second;
+    }
+
+    public int getThird() {
+        return third;
+    }
+
+    public void setThird(int third) {
+        this.third = third;
+    }
+
+    public int getFourth() {
+        return fourth;
+    }
+
+    public void setFourth(int fourth) {
+        this.fourth = fourth;
+    }
+
+    public int getFifth() {
+        return fifth;
+    }
+
+    public void setFifth(int fifth) {
+        this.fifth = fifth;
+    }
+
+    public List<Integer> getPlayedNumbers() {
+        return Arrays.asList(first, second, third, fourth, fifth);
     }
 
 }

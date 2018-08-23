@@ -34,4 +34,26 @@ $(function () {
             }
         });
     });
+
+    $("#submitticket").on('click', function () {
+        
+        let lotteryTicket = {
+            name: $('#nameofplayer').val(),
+            first: $('#numberoneinput').val(),
+            second: $('#numbertwoinput').val(),
+            third: $('#numberthreeinput').val(),
+            fourth: $('#numberfourinput').val(),
+            fifth: $('#numberfiveinput').val(),
+        };
+        
+        $.ajax({
+            type: "POST",
+            url: '/rest/game',
+            data: JSON.stringify(lotteryTicket),
+            success: function() {
+                alert('Sikeresen beküldte a szelvényt!');
+            },
+            contentType: 'application/json'
+        });
+    });
 });

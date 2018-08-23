@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import org.springframework.stereotype.Component;
 
 /**
@@ -30,6 +31,7 @@ public class LotteryGameService {
     private List<LotteryTicket> threeHits = new ArrayList<>();
     private List<LotteryTicket> twoHits = new ArrayList<>();
 
+    @Transactional
     public void addTicket(LotteryTicket lotteryTicket) {
 
         em.persist(lotteryTicket);
