@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link type="text/css" href="/bootstrap.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="/js/helloworld.js"></script>
+    </head>
+    <body>
+        <nav data-th-replace="menu :: msgmenu"></nav>
+        <div class="container">
+
+
+            Nyomjon erre a gombra a számhúzáshoz: <input type="submit" id="generatewinners" class="btn btn-primary" value="Sorsolás"><br>
+
+            <p id="winner"></p>
+            <table class="table" id="tabwinner">
+                <thead>
+                    <tr>
+                        <th>Név</th>
+                        <th>Számok</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="loading-row">
+                        <td colspan="2" class="text-center"><em>loading...</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+            <p id="fivehits">5 találatos szelvények:</p>
+            <table class="table" id="tabfive">
+                <thead>
+                    <tr>
+                        <th>Név</th>
+                        <th>Számok</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="loading-row">
+                        <td colspan="2" class="text-center"><em>loading...</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p id="fourhits">4 találatos szelvények:</p>
+            <table class="table" id="tabfour">
+                <thead>
+                    <tr>
+                        <th>Név</th>
+                        <th>Számok</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="loading-row">
+                        <td colspan="2" class="text-center"><em>loading...</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p id="threehits">3 találatos szelvények:</p>
+            <table class="table" id="tabthree">
+                <thead>
+                    <tr>
+                        <th>Név</th>
+                        <th>Számok</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="loading-row">
+                        <td colspan="2" class="text-center"><em>loading...</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p id="twohits">2 találatos szelvények:</p>
+            <table class="table" id="tabtwo">
+                <thead>
+                    <tr>
+                        <th>Név</th>
+                        <th>Számok</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="loading-row">
+                        <td colspan="2" class="text-center"><em>loading...</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </body>
+</html>
